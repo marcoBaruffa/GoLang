@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"os"
+	"rssReader/search"
 )
 
 // init is called prior to main.

@@ -7,6 +7,7 @@ import (
 	"log"
 	"net/http"
 	"regexp"
+	"rssReader/search"
 )
 
 type (
@@ -85,10 +86,13 @@ func (m rssMatcher) Search(feed *search.Feed, searchTerm string) ([]*search.Resu
 
 		// If we found a match save the result.
 		if matched {
-			results = append(results, &search.Result{
-				Field:   "Title",
-				Content: channelItem.Title,
-			})
+			results = append(
+				results,
+				&search.Result{
+					Field:   "Title",
+					Content: channelItem.Title,
+				},
+			)
 		}
 
 		// Check the description for the search term.
